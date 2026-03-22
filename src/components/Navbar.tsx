@@ -28,10 +28,10 @@ export default function Navbar() {
 export function Logo({ light = false }: { light?: boolean }) {
   return (
     <img
-      src="/logo_fundo_transparente.png"
+      src="/logo_nova.png"
       alt="Data Pocket"
       style={{
-        height: "36px",
+        height: "44px",
         width: "auto",
         filter: light ? "brightness(0) invert(1)" : "none",
       }}

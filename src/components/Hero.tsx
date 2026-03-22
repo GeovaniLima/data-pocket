@@ -161,13 +161,7 @@ export default function Hero() {
                     className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
                     style={{ background: "#22c55e" }}
                   >
-                    <svg width="16" height="16" viewBox="0 0 38 38" fill="none" aria-hidden="true">
-                      <path d="M10 3 L28 3 L36 17 L28 35 L10 35 L2 17 Z" fill="#22c55e" />
-                      <path d="M14.5 16.5 L14.5 14 Q14.5 12.5 16 12.5 L22 12.5 Q23.5 12.5 23.5 14 L23.5 16.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M9.5 25.5 L9.5 18 Q9.5 16 11.5 16 L26.5 16 Q28.5 16 28.5 18 L28.5 25.5 Q28.5 27.5 26.5 27.5 L11.5 27.5 Q9.5 27.5 9.5 25.5Z" stroke="white" strokeWidth="2.5" strokeLinejoin="round" />
-                      <polyline points="13,24.5 16.5,20.5 20,23 24.5,17" stroke="white" strokeWidth="2.7" strokeLinecap="round" strokeLinejoin="round" />
-                      <polyline points="21.5,16.5 24.5,17 24,19.5" stroke="white" strokeWidth="2.7" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                    <span className="text-white font-extrabold" style={{ fontSize: "7px", letterSpacing: "-0.02em" }}>DP</span>
                   </div>
                   <div>
                     <p className="text-white text-[10px] font-semibold leading-none">Data Pocket</p>

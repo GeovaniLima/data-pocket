@@ -76,9 +76,9 @@ export default function WhatsAppChat({ script, isActive }: Props) {
     <div className="rounded-[24px] overflow-hidden border border-[#e2e8f0] shadow-lg max-w-[380px] w-full mx-auto">
       {/* WhatsApp-style header */}
       <div className="bg-[#075E54] px-4 py-3 flex items-center gap-3">
-        {/* Avatar — Data Pocket logo icon */}
-        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow overflow-hidden p-1">
-          <img src="/logo_fundo_transparente.png" alt="Data Pocket" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+        {/* Avatar */}
+        <div className="w-10 h-10 rounded-full bg-[#22c55e] flex items-center justify-center flex-shrink-0 shadow">
+          <span className="text-white text-xs font-extrabold tracking-tight">DP</span>
         </div>
         <div className="flex flex-col gap-0.5">
           <span className="text-white text-sm font-bold leading-none">Data Pocket</span>
