@@ -86,7 +86,7 @@ const steps = [
   {
     num: "02",
     title: "Você pergunta, ele responde",
-    body: 'Direto no WhatsApp. "Qual produto me dá mais lucro?" "Tenho estoque encalhado?" "Como foi minha semana?" — em segundos.',
+    body: 'Direto no WhatsApp. "Qual produto me dá mais lucro?" "Como foi minha semana de vendas?" "Qual cliente comprou mais?" — em segundos.',
   },
   {
     num: "03",

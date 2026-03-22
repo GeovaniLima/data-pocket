@@ -44,17 +44,17 @@ const segments = [
   {
     id: "varejo",
     title: "Comércio e Varejo",
-    body: "Saiba o que mais vende, o que encalha e qual produto tem mais margem — sem abrir o sistema.",
+    body: "Saiba o que mais vende, qual produto tem mais margem e como foi sua semana — sem abrir planilha.",
   },
   {
     id: "farmacia",
     title: "Farmácias",
-    body: "Controle de estoque, curva ABC, margem por produto e alertas de vencimento em segundos.",
+    body: "Veja quais produtos mais vendem, margem por item e tendência de vendas da semana em segundos.",
   },
   {
     id: "restaurante",
     title: "Restaurantes",
-    body: "Custo de prato, margem por item do cardápio, giro de insumos — sem planilha auxiliar.",
+    body: "Veja quais pratos mais vendem, margem por item do cardápio e faturamento do dia — sem planilha auxiliar.",
   },
   {
     id: "servicos",
@@ -64,7 +64,7 @@ const segments = [
   {
     id: "distribuidor",
     title: "Distribuidores",
-    body: "Posição de estoque, pedidos em aberto, clientes sem compra e giro por SKU.",
+    body: "Veja clientes sem compra recente, faturamento por cliente e tendência de vendas por período.",
   },
   {
     id: "construcao",

@@ -26,8 +26,8 @@ export const chatScripts: ChatScript[] = [
       title: "Em 30 segundos, a farmacêutica sabia exatamente o que fazer",
       bullets: [
         "Identificou o produto com maior margem da semana",
-        "Descobriu R$ 6.048 parados no estoque",
-        "Tomou decisão de liquidação sem abrir o sistema",
+        "Descobriu quais produtos têm potencial de crescimento",
+        "Tomou decisão de precificação sem abrir o sistema",
       ],
     },
     messages: [
@@ -43,12 +43,12 @@ export const chatScripts: ChatScript[] = [
       },
       {
         from: "user",
-        text: "Tem algo encalhado no estoque?",
+        text: "Qual produto tem maior potencial de venda agora?",
         delay: 1200,
       },
       {
         from: "bot",
-        text: "Atenção: 4 itens parados há mais de 30 dias 📦\n\n• Vitamina C efervescente — 210 un. (R$ 1.890)\n• Protetor solar FPS 50 — 87 un. (R$ 2.610)\n• Colágeno hidrolisado — 43 un. (R$ 1.548)\n\n💡 Liquidação nos itens sazonais pode liberar R$ 6.048 em capital agora.",
+        text: "Oportunidade de crescimento 📈\n\nOmeprazol 20mg tem a maior margem (42%) mas representa só 19% das vendas. Dipirona vende 70% mais, mas com margem 10 p.p. menor.\n\n💡 Impulsionar o Omeprazol pode aumentar seu lucro sem aumentar o volume de vendas.",
         delay: 1400,
       },
     ],

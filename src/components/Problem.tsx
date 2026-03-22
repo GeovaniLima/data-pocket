@@ -2,7 +2,7 @@ const problems = [
   {
     num: "01",
     title: "O dado existe, mas não chega",
-    body: "Margem, ponto de equilíbrio, giro de estoque — tudo está na sua planilha. Mas em qual aba? Com qual fórmula? Não dá tempo de procurar.",
+    body: "Margem, faturamento, ticket médio — tudo está na sua planilha. Mas em qual aba? Com qual fórmula? Não dá tempo de procurar.",
     stat: null,
   },
   {

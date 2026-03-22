@@ -9,9 +9,9 @@ const proofPoints = [
 /* Mensagens estáticas para o phone mockup */
 const previewMessages = [
   { from: "user", text: "Qual o produto que mais lucra hoje?" },
-  { from: "bot",  text: "Top 3 por margem esta semana 📊\n\n🥇 Omeprazol 20mg — 42%\n🥈 Dipirona 500mg — 38%\n🥉 Amoxicilina — 31%\n\n💡 O Omeprazol tem a maior margem. Quer ver potencial de giro?" },
-  { from: "user", text: "Tem estoque encalhado?" },
-  { from: "bot",  text: "4 itens parados há +30 dias 📦\nR$ 6.048 em capital parado.\nLiquidação agora libera caixa imediato." },
+  { from: "bot",  text: "Top 3 por margem esta semana 📊\n\n🥇 Omeprazol 20mg — 42%\n🥈 Dipirona 500mg — 38%\n🥉 Amoxicilina — 31%\n\n💡 O Omeprazol tem a maior margem. Quer ver o potencial de impulsioná-lo?" },
+  { from: "user", text: "Como foi meu faturamento essa semana?" },
+  { from: "bot",  text: "Faturamento esta semana: R$ 12.430\nVs. semana passada: +8,3% 📈\nMelhor dia: quinta-feira (R$ 2.890)" },
 ];
 
 export default function Hero() {
