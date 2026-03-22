@@ -44,10 +44,10 @@ export default function Stats() {
         </h2>
 
         {/* Bento grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {/* Card hero — 47M (span 2 cols no desktop) */}
+        <div className="flex flex-col gap-4">
+          {/* Card hero — 47M (linha completa) */}
           <div
-            className="sm:col-span-2 rounded-2xl p-8 flex flex-col justify-between"
+            className="w-full rounded-2xl p-8 flex flex-col justify-between"
             style={{
               background: "#0a0a0a",
               minHeight: "220px",
@@ -80,6 +80,7 @@ export default function Stats() {
           </div>
 
           {/* Cards regulares */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {stats.slice(1).map((s) => (
             <div
               key={s.num}
@@ -116,6 +117,7 @@ export default function Stats() {
               </p>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>
