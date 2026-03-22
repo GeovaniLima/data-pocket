@@ -28,7 +28,7 @@ const plans: PlanConfig[] = [
     name: "Plano Plus",
     price: "A consultar",
     period: "",
-    badge: "Em breve",
+    badge: null,
     features: ["Mensagens ilimitadas", "Integre com seu sistema"],
     cta: "Comprar",
     highlight: false,
