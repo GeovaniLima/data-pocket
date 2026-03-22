@@ -1,17 +1,17 @@
 import Link from "next/link";
 
 const proofPoints = [
-  { num: "82%",  label: "já tiveram prejuízo por falta de dados" },
+  { num: "82%", label: "já tiveram prejuízo por falta de dados" },
   { num: "100%", label: "mudariam decisões com visão unificada" },
-  { num: "91%",  label: "pagariam por uma visão clara do negócio" },
+  { num: "91%", label: "pagariam por uma visão clara do negócio" },
 ];
 
 /* Mensagens estáticas para o phone mockup */
 const previewMessages = [
   { from: "user", text: "Qual o produto que mais lucra hoje?" },
-  { from: "bot",  text: "Top 3 por margem esta semana 📊\n\n🥇 Omeprazol 20mg — 42%\n🥈 Dipirona 500mg — 38%\n🥉 Amoxicilina — 31%\n\n💡 O Omeprazol tem a maior margem. Quer ver o potencial de impulsioná-lo?" },
+  { from: "bot", text: "Top 3 por margem esta semana 📊\n\n🥇 Omeprazol 20mg — 42%\n🥈 Dipirona 500mg — 38%\n🥉 Amoxicilina — 31%\n\n💡 O Omeprazol tem a maior margem. Quer ver o potencial de impulsioná-lo?" },
   { from: "user", text: "Como foi meu faturamento essa semana?" },
-  { from: "bot",  text: "Faturamento esta semana: R$ 12.430\nVs. semana passada: +8,3% 📈\nMelhor dia: quinta-feira (R$ 2.890)" },
+  { from: "bot", text: "Faturamento esta semana: R$ 12.430\nVs. semana passada: +8,3% 📈\nMelhor dia: quinta-feira (R$ 2.890)" },
 ];
 
 export default function Hero() {
@@ -125,7 +125,7 @@ export default function Hero() {
                 className="text-[0.6rem] tracking-wide mt-4"
                 style={{ color: "#bbbbbb" }}
               >
-                Pesquisa de campo Data Pocket — março/2026 · n=11 · 8 segmentos
+                Pesquisa de campo Data Pocket — março/2026
               </p>
             </div>
           </div>

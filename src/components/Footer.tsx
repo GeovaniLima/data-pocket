@@ -21,9 +21,6 @@ export default function Footer() {
             <p className="text-sm leading-relaxed text-white/40">
               O dado que você já tem,<br />finalmente na sua mão.
             </p>
-            <span className="text-xs mt-2 text-white/20">
-              Feito no Brasil 🇧🇷
-            </span>
           </div>
 
           {/* Col 2 — Navegação */}
@@ -66,7 +63,7 @@ export default function Footer() {
                 className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                 style={{ background: "#22c55e", boxShadow: "0 0 6px #22c55e" }}
               />
-              Pesquisa de campo · n=11 · março/2026
+              Pesquisa de campo março/2026
             </div>
           </div>
         </div>
