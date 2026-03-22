@@ -17,10 +17,20 @@
       "Read(//c/Users/geovani.lima/AppData/Roaming/Claude/**)",
       "Bash(find C:/Users/geovani.lima/.claude -name *.json)",
       "Bash(gh auth:*)",
-      "Bash(git -C \"c:/Projetos/data-pocket-next\" remote -v)"
+      "Bash(git -C \"c:/Projetos/data-pocket-next\" remote -v)",
+      "Bash(python -c \"from PIL import Image, ImageDraw, ImageFont; print\\(''ok''\\)\")",
+      "Bash(python generate_whatsapp_gifs.py)",
+      "Bash(ls -lh c:/Projetos/data-pocket-next/public/gifs/*.gif)",
+      "Bash(python -c \"import sys; sys.stdout.reconfigure\\(encoding=''utf-8''\\)\")",
+      "Bash(PYTHONUTF8=1 python generate_whatsapp_gifs.py)",
+      "Bash(python -c \":*)",
+      "Bash(python -c \"from PIL import Image; img=Image.open\\(''whatsapp_farmacia.gif''\\); img.seek\\(img.n_frames-1\\); img.save\\(''preview_farmacia.png''\\); print\\(''frames:'', img.n_frames\\)\")",
+      "Bash(python preview.py)",
+      "Bash(find /c/Projetos/data-pocket-next/src -type f -name *.css -o -name *.ts -o -name globals*)"
     ],
     "additionalDirectories": [
-      "C:\\Users\\geovani.lima\\.claude"
+      "C:\\Users\\geovani.lima\\.claude",
+      "c:\\Projetos\\data-pocket-next\\public\\gifs"
     ]
   }
 }
