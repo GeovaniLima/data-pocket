@@ -163,14 +163,18 @@ export default function WaitlistForm() {
                 style={{ borderColor: "rgba(255,255,255,0.06)" }}
               >
                 <div className="flex -space-x-1.5">
-                  {["#4ade80", "#22c55e", "#16a34a"].map((c, i) => (
-                    <div
+                  {[
+                    "https://i.pravatar.cc/40?img=47",
+                    "https://i.pravatar.cc/40?img=32",
+                    "https://i.pravatar.cc/40?img=12",
+                  ].map((src, i) => (
+                    <img
                       key={i}
-                      className="w-7 h-7 rounded-full border-2 flex items-center justify-center text-[8px] font-bold text-white"
-                      style={{ background: c, borderColor: "#0a0a0a" }}
-                    >
-                      {String.fromCharCode(65 + i)}
-                    </div>
+                      src={src}
+                      alt=""
+                      className="w-7 h-7 rounded-full border-2 object-cover"
+                      style={{ borderColor: "#0a0a0a" }}
+                    />
                   ))}
                 </div>
                 <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
