@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Logo } from "./Navbar";
 
 const navLinks = [
   { label: "Como funciona", href: "#como-funciona" },
@@ -16,7 +15,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
           {/* Col 1 — Brand */}
           <div className="flex flex-col gap-4">
-            <Logo light />
+            <span className="text-white font-black text-lg tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              Data <span style={{ color: "#22c55e" }}>Pocket</span>
+            </span>
             <p className="text-sm leading-relaxed text-white/40">
               O dado que você já tem,<br />finalmente na sua mão.
             </p>
