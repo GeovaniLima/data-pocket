@@ -1,6 +1,7 @@
 "use client";
 
-type IconComponent = () => JSX.Element;
+import type { ReactElement } from "react";
+type IconComponent = () => ReactElement;
 
 /* Ícones SVG Lucide-style para cada segmento */
 const icons: Record<string, IconComponent> = {
