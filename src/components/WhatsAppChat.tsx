@@ -3,20 +3,16 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { ChatScript, ChatMessage } from "@/data/chats";
 
-type Props = {
-  script: ChatScript;
-  isActive: boolean;
-};
-
+type Props = { script: ChatScript; isActive: boolean };
 type RenderedMessage = ChatMessage & { id: number };
 
-const TYPING_DURATION = 900; // ms to show "typing..." before bot message appears
+const TYPING_DURATION = 900;
 
 function formatText(text: string) {
-  return text.split("\n").map((line, i) => (
+  return text.split("\n").map((line, i, arr) => (
     <span key={i}>
       {line}
-      {i < text.split("\n").length - 1 && <br />}
+      {i < arr.length - 1 && <br />}
     </span>
   ));
 }
@@ -34,9 +30,7 @@ export default function WhatsAppChat({ script, isActive }: Props) {
   }, []);
 
   const scrollToBottom = useCallback(() => {
-    if (chatRef.current) {
-      chatRef.current.scrollTop = chatRef.current.scrollHeight;
-    }
+    if (chatRef.current) chatRef.current.scrollTop = chatRef.current.scrollHeight;
   }, []);
 
   const runScript = useCallback(() => {
@@ -44,80 +38,59 @@ export default function WhatsAppChat({ script, isActive }: Props) {
     setMessages([]);
     setIsTyping(false);
     counterRef.current = 0;
-
-    let cumulative = 500; // initial pause
+    let cumulative = 500;
 
     script.messages.forEach((msg) => {
       cumulative += msg.delay;
-
       if (msg.from === "bot") {
-        // Show typing indicator before bot message
-        const typingStart = cumulative;
-        const t1 = setTimeout(() => {
-          setIsTyping(true);
-          scrollToBottom();
-        }, typingStart);
+        const t1 = setTimeout(() => { setIsTyping(true); scrollToBottom(); }, cumulative);
         timeoutsRef.current.push(t1);
-
         cumulative += TYPING_DURATION;
         const t2 = setTimeout(() => {
           setIsTyping(false);
-          const id = counterRef.current++;
-          setMessages((prev) => [...prev, { ...msg, id }]);
+          setMessages((prev) => [...prev, { ...msg, id: counterRef.current++ }]);
           scrollToBottom();
         }, cumulative);
         timeoutsRef.current.push(t2);
       } else {
         const t = setTimeout(() => {
-          const id = counterRef.current++;
-          setMessages((prev) => [...prev, { ...msg, id }]);
+          setMessages((prev) => [...prev, { ...msg, id: counterRef.current++ }]);
           scrollToBottom();
         }, cumulative);
         timeoutsRef.current.push(t);
       }
     });
 
-    // Loop: restart after last message + pause
     cumulative += 3000;
-    const tLoop = setTimeout(() => {
-      runScript();
-    }, cumulative);
-    timeoutsRef.current.push(tLoop);
+    timeoutsRef.current.push(setTimeout(runScript, cumulative));
   }, [script, clearTimeouts, scrollToBottom]);
 
   useEffect(() => {
-    if (isActive) {
-      runScript();
-    } else {
-      clearTimeouts();
-      setMessages([]);
-      setIsTyping(false);
-    }
+    if (isActive) { runScript(); } else { clearTimeouts(); setMessages([]); setIsTyping(false); }
     return () => clearTimeouts();
   }, [isActive, runScript, clearTimeouts]);
 
-  // Scroll whenever messages/typing changes
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages, isTyping, scrollToBottom]);
+  useEffect(() => { scrollToBottom(); }, [messages, isTyping, scrollToBottom]);
 
   return (
-    <div className="bg-[#1C1C2E] rounded-[24px] overflow-hidden border border-white/10 shadow-2xl max-w-[380px] w-full mx-auto">
-      {/* Header */}
-      <div className="bg-[#25253A] px-4 py-3 flex items-center gap-3 border-b border-white/5">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#6C3DE8] to-[#10E898] flex items-center justify-center text-white text-xs font-extrabold flex-shrink-0 shadow-lg">
-          DP
+    <div className="rounded-[24px] overflow-hidden border border-[#e2e8f0] shadow-lg max-w-[380px] w-full mx-auto">
+      {/* WhatsApp-style header */}
+      <div className="bg-[#075E54] px-4 py-3 flex items-center gap-3">
+        {/* Avatar — Data Pocket logo icon */}
+        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow overflow-hidden p-1">
+          <img src="/logo_fundo_transparente.png" alt="Data Pocket" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
         </div>
         <div className="flex flex-col gap-0.5">
           <span className="text-white text-sm font-bold leading-none">Data Pocket</span>
-          <span className="text-[#10E898] text-xs leading-none">● Online agora</span>
+          <span className="text-[#a7f3d0] text-xs leading-none">● Online agora</span>
         </div>
       </div>
 
-      {/* Chat body */}
+      {/* Chat body — WhatsApp wallpaper background */}
       <div
         ref={chatRef}
-        className="chat-scroll bg-[#15152A] p-4 flex flex-col gap-2.5 h-[340px] overflow-y-auto"
+        className="chat-scroll p-4 flex flex-col gap-2.5 h-[340px] overflow-y-auto"
+        style={{ background: "#ECE5DD" }}
       >
         {messages.map((msg) => (
           <div
@@ -126,10 +99,10 @@ export default function WhatsAppChat({ script, isActive }: Props) {
             style={{ animation: "fadeInUp 0.25s ease both" }}
           >
             <div
-              className={`max-w-[85%] px-3.5 py-2.5 text-sm leading-relaxed rounded-2xl ${
+              className={`max-w-[85%] px-3.5 py-2.5 text-sm leading-relaxed rounded-2xl shadow-sm ${
                 msg.from === "user"
-                  ? "bg-[#6C3DE8] text-white rounded-br-sm"
-                  : "bg-[#25253A] text-[#F0F0F8] border border-white/5 rounded-bl-sm"
+                  ? "bg-[#DCF8C6] text-[#111111] rounded-br-sm"
+                  : "bg-white text-[#111111] rounded-bl-sm"
               }`}
             >
               {formatText(msg.text)}
@@ -137,21 +110,19 @@ export default function WhatsAppChat({ script, isActive }: Props) {
           </div>
         ))}
 
-        {/* Typing indicator */}
         {isTyping && (
           <div className="flex justify-start" style={{ animation: "fadeInUp 0.2s ease both" }}>
-            <div className="bg-[#25253A] border border-white/5 rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1.5 items-center">
-              <span className="typing-dot w-2 h-2 rounded-full bg-[#8888AA] inline-block" />
-              <span className="typing-dot w-2 h-2 rounded-full bg-[#8888AA] inline-block" />
-              <span className="typing-dot w-2 h-2 rounded-full bg-[#8888AA] inline-block" />
+            <div className="bg-white rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1.5 items-center shadow-sm">
+              <span className="typing-dot w-2 h-2 rounded-full bg-[#999999] inline-block" />
+              <span className="typing-dot w-2 h-2 rounded-full bg-[#999999] inline-block" />
+              <span className="typing-dot w-2 h-2 rounded-full bg-[#999999] inline-block" />
             </div>
           </div>
         )}
 
-        {/* Empty state so the chat doesn't look empty on mount */}
         {messages.length === 0 && !isTyping && (
           <div className="flex-1 flex items-center justify-center">
-            <span className="text-[#444466] text-sm">Iniciando conversa...</span>
+            <span className="text-[#999999] text-sm">Iniciando conversa...</span>
           </div>
         )}
       </div>
