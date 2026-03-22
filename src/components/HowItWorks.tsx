@@ -1,31 +1,25 @@
 /* Artefatos contextuais para cada step */
 const stepArtifacts = [
-  /* Step 01 — conecta ao sistema */
+  /* Step 01 — conecta à planilha */
   () => (
     <div
-      className="rounded-xl p-4 border"
+      className="rounded-xl p-4 border flex items-center gap-4"
       style={{ background: "#fafaf9", borderColor: "#e8e4de" }}
     >
-      <p
-        className="text-[0.6rem] font-semibold tracking-[0.1em] uppercase mb-3"
-        style={{ color: "#aaaaaa" }}
+      {/* Ícone planilha */}
+      <div
+        className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+        style={{ background: "#22c55e" }}
       >
-        Integrações disponíveis
-      </p>
-      <div className="grid grid-cols-2 gap-2">
-        {["Bling", "Omie", "Totvs", "SAP B1"].map((erp) => (
-          <div
-            key={erp}
-            className="px-2.5 py-1.5 rounded-lg text-xs font-semibold text-center"
-            style={{ background: "#ffffff", border: "1px solid #e8e4de", color: "#555" }}
-          >
-            {erp}
-          </div>
-        ))}
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <path d="M3 9h18M3 15h18M9 3v18" />
+        </svg>
       </div>
-      <p className="text-[0.6rem] text-center mt-2" style={{ color: "#bbbbbb" }}>
-        + outros em breve
-      </p>
+      <div>
+        <p className="text-sm font-semibold" style={{ color: "#0a0a0a" }}>Planilha conectada</p>
+        <p className="text-xs mt-0.5" style={{ color: "#aaaaaa" }}>Google Sheets ou Excel</p>
+      </div>
     </div>
   ),
 
@@ -86,8 +80,8 @@ const stepArtifacts = [
 const steps = [
   {
     num: "01",
-    title: "Conecta ao seu sistema",
-    body: "Integra com os ERPs e sistemas mais usados por pequenas empresas. Sem migração, sem perda de dados, sem recomeçar do zero.",
+    title: "Conecta à sua planilha",
+    body: "Você importa sua planilha (Google Sheets ou Excel) com os dados do seu negócio. Sem migração, sem recomeçar do zero.",
   },
   {
     num: "02",
