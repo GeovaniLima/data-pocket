@@ -7,9 +7,14 @@ type Plan = "inicial" | "plus";
 type OrderData = { nome: string; negocio: string; telefone: string };
 const INITIAL_ORDER: OrderData = { nome: "", negocio: "", telefone: "" };
 
-const plans = [
+type PlanConfig = {
+  id: Plan; name: string; price: string; period: string;
+  badge: string | null; features: string[]; cta: string; highlight: boolean;
+};
+
+const plans: PlanConfig[] = [
   {
-    id: "inicial" as Plan,
+    id: "inicial",
     name: "Plano Inicial",
     price: "R$ 79,90",
     period: "/mês",
@@ -19,10 +24,11 @@ const plans = [
     highlight: true,
   },
   {
-    id: "plus" as Plan,
+    id: "plus",
     name: "Plano Plus",
     price: "A consultar",
     period: "",
+    badge: "Em breve",
     features: ["Mensagens ilimitadas", "Integre com seu sistema"],
     cta: "Comprar",
     highlight: false,
