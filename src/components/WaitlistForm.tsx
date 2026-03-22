@@ -12,7 +12,7 @@ const INITIAL: FormData = { nome: "", negocio: "", porte: "", sistema: "", qual_
 const perks = [
   "Acesso antecipado",
   "Preço de fundador",
-  "Integração prioritária com seu sistema",
+  "Conexão prioritária com sua planilha",
   "Suporte direto com o time de produto",
 ];
 
@@ -224,23 +224,16 @@ export default function WaitlistForm() {
                   </select>
                 </DarkField>
 
-                <DarkField label="Usa algum sistema de gestão?" id={`${uid}-sistema`} error={errors.sistema}>
+                <DarkField label="Como organiza os dados do negócio?" id={`${uid}-sistema`} error={errors.sistema}>
                   <select id={`${uid}-sistema`} value={data.sistema}
                     onChange={(e) => set("sistema", e.target.value)} className={darkSelectClass(errors.sistema)}>
                     <option value="" disabled>Selecione</option>
-                    <option value="nao">Não uso sistema</option>
-                    <option value="planilha">Só uso planilhas</option>
-                    <option value="sim-qual">Sim — vou informar qual</option>
+                    <option value="google-sheets">Google Sheets</option>
+                    <option value="excel">Excel</option>
+                    <option value="ambos">Uso os dois</option>
+                    <option value="nao">Ainda não organizo em planilha</option>
                   </select>
                 </DarkField>
-
-                {data.sistema === "sim-qual" && (
-                  <DarkField label="Qual sistema você usa?" id={`${uid}-qual`} error={errors.qual_sistema}>
-                    <input id={`${uid}-qual`} type="text" placeholder="Ex: Bling, Tiny, Omie, SAP, Totvs..."
-                      value={data.qual_sistema} onChange={(e) => set("qual_sistema", e.target.value)}
-                      className={darkInputClass(errors.qual_sistema)} />
-                  </DarkField>
-                )}
 
                 <DarkField label="Maior dificuldade com dados?" id={`${uid}-dif`} error={errors.dificuldade}>
                   <select id={`${uid}-dif`} value={data.dificuldade}

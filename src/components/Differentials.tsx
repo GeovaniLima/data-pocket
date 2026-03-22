@@ -2,7 +2,7 @@ const rows = [
   ["Dashboard cheio de gráficos que ninguém entende", "Resposta em linguagem de negócio"],
   ["Precisa de treinamento para usar", "Zero treinamento — é como o WhatsApp"],
   ["Você procura o dado e não acha", "Você pergunta, ele responde em segundos"],
-  ["Substitui seu ERP (migração de dados)", "Conecta ao seu ERP atual, sem migração"],
+  ["Substitui sua planilha por outro sistema", "Usa a planilha que você já tem, sem migração"],
   ["Resposta em horas ou dias", "Disponível 24h, onde você estiver"],
   ["Linguagem técnica de BI", "Linguagem de dono de negócio"],
 ];

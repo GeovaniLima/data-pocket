@@ -18,11 +18,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Data Pocket — O dado que você já tem, finalmente na sua mão",
   description:
-    "Data Pocket transforma os dados do seu negócio em decisões simples, rápidas e confiáveis — direto no WhatsApp. Sem dashboards complicados. Sem planilhas.",
+    "Data Pocket conecta os dados da sua planilha e transforma em decisões simples, rápidas e confiáveis — direto no WhatsApp. Sem dashboards complicados.",
   openGraph: {
     title: "Data Pocket — O dado que você já tem, finalmente na sua mão",
     description:
-      "Conecta ao sistema que você já usa e entrega respostas estratégicas em segundos, na linguagem do seu negócio.",
+      "Conecta os dados da sua planilha e entrega respostas estratégicas em segundos, na linguagem do seu negócio.",
     type: "website",
   },
 };

@@ -64,7 +64,7 @@ export default function Hero() {
               className="text-base sm:text-lg leading-relaxed mb-8 max-w-md animate-fade-in-up"
               style={{ color: "#555555", animationDelay: "0.1s" }}
             >
-              A última milha do dado: do seu ERP direto para a decisão —
+              A última milha do dado: da sua planilha direto para a decisão —
               em segundos, no WhatsApp.
             </p>
 

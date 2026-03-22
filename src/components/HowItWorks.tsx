@@ -109,7 +109,7 @@ export default function HowItWorks() {
             color: "#0a0a0a",
           }}
         >
-          Da tela do ERP
+          Da sua planilha
           <br />
           para a sua decisão
         </h2>
@@ -117,7 +117,7 @@ export default function HowItWorks() {
           className="mt-4 text-base leading-relaxed max-w-lg"
           style={{ color: "#555555" }}
         >
-          O Data Pocket se conecta ao sistema que você já tem e entrega a resposta
+          O Data Pocket conecta os dados da sua planilha e entrega a resposta
           que você precisa — na linguagem do seu negócio, quando você precisar.
         </p>
 
